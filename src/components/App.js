@@ -47,22 +47,22 @@ class App extends Component {
     tempApts[aptIndex][name] = value;
     this.setState({myAppointments:tempApts})
   }
-  componentDidMount(){
-    fetch('./data.json')
-    .then(response => response.json())
-    .then(result => {
-      const apts = result.map(item =>{
-        item.aptId = this.state.lastIndex;
-        this.setState({
-          lastIndex:this.state.lastIndex + 1
-        })
-        return item;
-      })
-      this.setState({
-        myAppointments:apts
-      });
-    });
-  }
+//   componentDidMount(){
+//     fetch('./data.json')
+//     .then(response => response.json())
+//     .then(result => {
+//       const apts = result.map(item =>{
+//         item.aptId = this.state.lastIndex;
+//         this.setState({
+//           lastIndex:this.state.lastIndex + 1
+//         })
+//         return item;
+//       })
+//       this.setState({
+//         myAppointments:apts
+//       });
+//     });
+//   }
   
   render(){
     let order = (this.state.orderDir === "asc") ? 1 : -1 ;
